@@ -54,3 +54,42 @@ band2.clear()
 print(band2)
 
 del band2
+
+# #Copy Dictonaries
+
+# band2 = band #creates a reference
+# print("Bad Reference!")
+# print(band2)
+# print(band)
+
+# band2["drums"] = "Juan"
+# print(band)
+print('')
+band2 = band.copy()
+band2["drums"] = "Juan"
+print("Good Copy!")
+print(band)
+print(band2)
+
+#or we can use the dict() constructor function
+band3 = dict(band)
+print("Good Copy!")
+print(band3)
+
+#nested dictionary
+print("")
+member1 = {
+    "Name": "Plant",
+    "Instrument": "Vocals"
+}
+
+member2 = {
+    "Name": "Page",
+    "Instrument": "Guitar"
+}
+band = {
+    "member1": member1,
+    "memeber2": member2
+}
+print(band)
+print(band["member1"]["Name"])
