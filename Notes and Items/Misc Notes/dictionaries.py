@@ -29,3 +29,9 @@ print("Guitar" in band)
 print("Triangle" in band)
 
 #Change Values
+band["Vocals"] = "Cloverdale"
+band.update({"bass":"JPJ"})
+
+print(band)
+
+
