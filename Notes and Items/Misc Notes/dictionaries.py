@@ -23,3 +23,9 @@ print(band.values())
 
 #List of Key/value paris as tuples
 print(band.items())
+
+#Verify a key exists
+print("Guitar" in band)
+print("Triangle" in band)
+
+#Change Values
