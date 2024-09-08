@@ -10,3 +10,16 @@ print(band)
 print(band2)
 print(type(band))
 print(len(band))
+
+#Accessing Items
+print(band["Vocals"])
+print(band.get("Guitar"))
+
+#List all key
+print(band.keys())
+
+#List all Values
+print(band.values())
+
+#List of Key/value paris as tuples
+print(band.items())
