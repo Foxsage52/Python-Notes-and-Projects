@@ -93,3 +93,21 @@ band = {
 }
 print(band)
 print(band["member1"]["Name"])
+
+#Sets
+nums = {1, 2 , 3, 4}
+
+nums2 = set((1, 2, 3 ,4))
+
+print(nums)
+print(nums2)
+print(type(nums))
+print(len(nums))
+
+#No duplicates Allowed
+nums = {1, 2, 2, 3}
+print(nums)
+
+#True value is a dupe of zero, false is a dupe of zero
+nums = {1, True, 2, False, 3, 4, 0}
+print(nums)
