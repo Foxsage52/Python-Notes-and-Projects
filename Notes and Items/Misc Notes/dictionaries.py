@@ -134,3 +134,17 @@ two = {5, 6, 7}
 
 mynewset = one.union(two)
 print(mynewset)
+
+#Keep only the duplicates
+one = {1, 2, 3}
+two = {2, 2, 3}
+
+one.intersection_update(two)
+print(one)
+
+#Keep everything excecpt the duplicates
+one = {1, 2, 3}
+two = {2, 3, 4}
+
+one.symmetric_difference_update(two)
+print(one)
