@@ -111,3 +111,26 @@ print(nums)
 #True value is a dupe of zero, false is a dupe of zero
 nums = {1, True, 2, False, 3, 4, 0}
 print(nums)
+
+#Check if a value is in a set
+print(2 in nums)
+
+#but you can't refer to an element in the set with an index position or key
+
+#adds a new element to a set
+nums.add(8)
+print(nums)
+
+#Adds element from one set to another
+morenums = {5, 6, 7}
+nums.update(morenums)
+print(nums)
+
+#You can use updates with lists, tuples, and dictonaries too
+
+#Merge two sets to create a new one
+one = {1, 2, 3}
+two = {5, 6, 7}
+
+mynewset = one.union(two)
+print(mynewset)
