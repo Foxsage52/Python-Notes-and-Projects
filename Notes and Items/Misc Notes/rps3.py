@@ -2,44 +2,57 @@ import sys
 import random
 from enum import Enum
 
-class RPS(Enum):
-    ROCK = 1
-    PAPER = 2
-    SCISSORS = 3
-    
 
-playagain = True
+def play_rps():
 
-while playagain:
-    playerchoice = input("\nEnter...\n1 for Rock,\n2 for Paper, or \n3 for Scissors:\n\n")
+    class RPS(Enum):
+        ROCK = 1
+        PAPER = 2
+        SCISSORS = 3
+
+    playerchoice = input(
+        "\nEnter... \n1 for Rock,\n2 for Paper, or \n3 for Scissors:\n\n")
+
+    if playerchoice not in ["1", "2", "3"]:
+        print("You must enter 1, 2, or 3.")
+        return play_rps()
 
     player = int(playerchoice)
 
-    if player <1 or player > 3:
-        sys.exit("You must enter 1, 2 or 3.")
-    
     computerchoice = random.choice("123")
 
     computer = int(computerchoice)
 
-    print("\nyou chose " + str(RPS(player)).replace("RPS.","") + ".")
-    print("Python chose " + str(RPS(computer)).replace("RPS.","") + ".\n")
+    print("\nYou chose " + str(RPS(player)).replace('RPS.', '').title() + ".")
+    print("Python chose " + str(RPS(computer)
+                                ).replace('RPS.', '').title() + ".\n")
 
     if player == 1 and computer == 3:
         print("🎉 You win!")
     elif player == 2 and computer == 1:
         print("🎉 You win!")
+    elif player == 3 and computer == 2:
+        print("🎉 You win!")
     elif player == computer:
-        print("😲 Tie Game!")
+        print("😲 Tie game!")
     else:
-        print("🐍 Python Wins")
-    
-    playagain=input("\n Play again? \n Y for Yes or \n Q to Quit\n\n")
-    
+        print("🐍 Python wins!")
+
+    print("\nPlay again?")
+
+    while True:
+        playagain = input("\nY for Yes or \nQ to Quit\n")
+        if playagain.lower() not in ["y", "q"]:
+            continue
+        else:
+            break
+
     if playagain.lower() == "y":
-        continue
+        return play_rps()
     else:
-        print("\n🎉🎉🎉🎉🎉")
-        print("Thannk you for playing!\n")
-        playagain = False
-sys.exit("Bye! 👋")
+        print("\n🎉🎉🎉🎉")
+        print("Thank you for playing!\n")
+        sys.exit("Bye! 👋")
+
+
+play_rps()
